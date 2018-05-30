@@ -12,11 +12,18 @@ using std::cout;
 using std::endl;
 
 double f(double x, double y) {
-	return 4;
+	return 0;
 }
 
 double g(double x, double y) {
-	return (y-0.5)*(y-0.5) + (x-0.5)*(x-0.5);
+	double eps = 0.0001;
+	if (fabs(y-1) < eps){
+		return x;
+	}
+	if (fabs(x-1) < eps){
+		return y*y;
+	} 
+	return 0;
 }
 
 Matrix solveDirichletSerial(size_t N, double eps) {
