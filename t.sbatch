@@ -17,6 +17,6 @@ do
 	export OMP_NUM_THREADS=$omp_threads
 	for d in ${dim[@]}
 	do
-		./main.exe d > "result_${omp_threads}_$d.txt"
+		./main  d > "result_${omp_threads}_$d.txt"
 	done
 done
